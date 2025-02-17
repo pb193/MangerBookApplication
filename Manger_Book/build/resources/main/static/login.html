@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Library Management System - Login</title>
+    <link href="css/login.css" rel="stylesheet">
+</head>
+<body>
+<div class="logo-container">
+    <img src="./img/logo.png" alt="Logo" class="logo">
+</div>
+<div class="container">
+    <div class="login-container">
+        <h2>图书管理系统</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">用户名</label>
+                <input id="username" name="username" placeholder="请输入用户名" required type="text">
+            </div>
+            <div class="input-group">
+                <label for="password">密码</label>
+                <input id="password" name="password" placeholder="请输入密码" required type="password">
+            </div>
+            <button type="submit">登录</button>
+        </form>
+        <p class="error-message" id="error-message"></p>
+        <div class="registration-link">
+            <p>还没有账户？ <a href="User%20Registration.html">用户注册</a></p>
+        </div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

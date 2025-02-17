@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #575757;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 15px;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+#bookList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.book-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.borrow-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.borrow-btn:hover {
+    background-color: #45a049;
+}

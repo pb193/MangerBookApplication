@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户管理 - 图书管理系统</title>
+    <link href="css/UM.css" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+    <h2>用户管理</h2>
+</header>
+<nav class="menu">
+    <a href="admin.html">管理员主页</a>
+    <a href="MangerBook.html">管理图书</a>
+    <a href="UserManger.html">用户管理</a>
+    <a href="BorrowingRecord.html">借阅记录</a>
+    <a href="../login.html" id="logoutLink">退出登录</a>
+</nav>
+<div class="container">
+    <form id="userForm">
+        <h3>添加用户</h3>
+        <input type="text" id="username" placeholder="用户名" required>
+        <input type="password" id="password" placeholder="密码" required>
+        <select id="role" required>
+            <option value="">选择角色</option>
+            <option value="admin">管理员</option>
+            <option value="regular">普通用户</option>
+        </select>
+        <button type="submit">添加用户</button>
+    </form>
+
+    <h3>用户列表</h3>
+    <table id="userTable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>用户名</th>
+            <th>角色</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 用户列表数据将通过 JavaScript 动态添加 -->
+        </tbody>
+    </table>
+</div>
+
+<script src="js/UM.js"></script> <!-- 引入 JavaScript 文件 -->
+</body>
+</html>

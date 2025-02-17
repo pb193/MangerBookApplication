@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理图书 - 图书管理系统</title>
+    <link href="css/MB.css" rel="stylesheet">
+    <script src="js/MB.js" defer></script>
+</head>
+<body>
+<header class="header">
+    <h2>图书管理</h2>
+</header>
+
+<nav class="menu">
+    <a href="admin.html">管理员主页</a>
+    <a href="MangerBook.html">管理图书</a>
+    <a href="UserManger.html">用户管理</a>
+    <a href="BorrowingRecord.html">借阅记录</a>
+    <a href="../login.html" id="logoutLink">退出登录</a>
+</nav>
+
+<main class="container">
+    <section class="card add-book-card">
+        <h3>添加新图书</h3>
+        <input type="text" id="bookTitle" placeholder="书名" required>
+        <input type="text" id="bookAuthor" placeholder="作者" required>
+        <input type="text" id="bookISBN" placeholder="ISBN" required>
+        <input type="number" id="bookQuantity" placeholder="库存数量" required min="1">
+        <button id="addBookBtn">添加图书</button>
+    </section>
+
+
+
+    <section class="card books-list-card">
+        <h3>图书列表</h3>
+        <ul id="booksList"></ul>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2024 图书管理系统.彭博 保留所有权利。</p>
+</footer>
+</body>
+</html>

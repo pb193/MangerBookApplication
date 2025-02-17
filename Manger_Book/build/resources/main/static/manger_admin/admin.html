@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Admin Dashboard</title>
+    <link href="css/admin.css" rel="stylesheet">
+    <script src="js/ad.js" defer></script>
+</head>
+<body>
+<header class="header">
+    <h2>管理员版 - 图书管理系统</h2>
+</header>
+
+<nav class="menu">
+    <a href="admin.html">管理员主页</a>
+    <a href="MangerBook.html">管理图书</a>
+    <a href="UserManger.html">用户管理</a>
+    <a href="BorrowingRecord.html">借阅处理</a>
+    <a href="../login.html" id="logoutLink">退出登录</a>
+</nav>
+
+<main class="container">
+    <div class="content">
+        <section class="card welcome-card">20202020
+            <h3>欢迎，管理员</h3>
+            <p>您可以查看图书、用户及借阅记录的信息。</p>
+        </section>
+
+        <section class="card book-list-card">
+            <h3>图书列表</h3>
+            <ul id="booksList"></ul>
+        </section>
+
+        <section class="card user-list-card">
+            <h3>用户列表</h3>
+            <ul id="usersList"></ul>
+        </section>
+
+        <section class="card borrow-records-card">
+            <h3>借阅记录</h3>
+            <ul id="borrowRecordsList"></ul>
+        </section>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2024 图书管理系统.彭博 保留所有权利。</p>
+</footer>
+
+</body>
+</html>

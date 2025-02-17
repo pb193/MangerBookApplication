@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>用户注册 - 图书管理系统</title>
+    <link href="css/login.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="registration-container">
+    <h2>用户注册</h2>
+    <form id="registerForm">
+        <div class="input-group">
+            <label for="registerUsername">用户名</label>
+            <input id="registerUsername" name="registerUsername" placeholder="用户名" required type="text">
+        </div>
+        <div class="input-group">
+            <label for="registerPassword">密码</label>
+            <input id="registerPassword" name="registerPassword" placeholder="密码" required type="password">
+        </div>
+        <div class="input-group">
+            <label for="confirmPassword">确认密码</label>
+            <input id="confirmPassword" name="confirmPassword" placeholder="确认密码" required type="password">
+        </div>
+        <button type="submit">注册</button>
+    </form>
+    <p class="error-message" id="error-message"></p>
+</div>
+
+
+<script src="js/UserR.js"></script>
+</body>
+</html>
