@@ -1,0 +1,251 @@
+图书管理系统后端 / Book Management System Backend
+概述 / Overview
+中文
+这是一个基于 Java Spring Boot 和 MyBatis 构建的图书管理系统后端服务，旨在为图书馆或类似场景提供图书管理、用户管理和借阅记录管理的功能。支持用户登录、图书的增删改查、借阅图书以及借阅记录的管理，适用于管理员和普通用户两种角色。
+
+当前版本: 1.0
+
+最后更新: 2025年3月28日
+
+English
+This is a backend service for a book management system built with Java Spring Boot and MyBatis, designed to provide book management, user management, and borrow record management for libraries or similar scenarios. It supports user login, CRUD operations for books, borrowing books, and managing borrow records, suitable for admin and regular user roles.
+
+Current Version: 1.0
+
+Last Updated: March 28, 2025
+
+功能 / Features
+中文
+用户管理:
+用户注册和登录（基于用户名和密码）。
+获取所有用户、按 ID 查询用户、更新和删除用户。
+图书管理:
+创建、查询（按 ID 或 ISBN）、更新和删除图书。
+获取图书总数和库存数量。
+借阅管理:
+创建借阅记录（包括借阅日期和状态）。
+获取所有借阅记录、按 ID 查询、更新和删除借阅记录。
+借阅图书（检查库存并创建记录）。
+批准借阅请求。
+安全性:
+基于角色区分权限（管理员和普通用户）。
+使用事务确保数据一致性。
+English
+User Management:
+User registration and login (username and password-based).
+Get all users, query by ID, update, and delete users.
+Book Management:
+Create, query (by ID or ISBN), update, and delete books.
+Get total book count and inventory quantity.
+Borrow Management:
+Create borrow records (including borrow date and status).
+Get all borrow records, query by ID, update, and delete records.
+Borrow books (check availability and create records).
+Approve borrow requests.
+Security:
+Role-based permission control (admin and regular user).
+Transactional support for data consistency.
+要求 / Requirements
+中文
+操作系统: Windows、Linux 或 macOS。
+Java 版本: JDK 11 或更高。
+构建工具: Maven 3.6+。
+数据库: MySQL 5.7 或更高。
+依赖项:
+spring-boot-starter-web（Web 框架）
+mybatis-spring-boot-starter（MyBatis 支持）
+mysql-connector-java（MySQL 驱动）
+lombok（简化 POJO 代码）
+IDE（可选）: IntelliJ IDEA 或 Eclipse。
+English
+Operating System: Windows, Linux, or macOS.
+Java Version: JDK 11 or higher.
+Build Tool: Maven 3.6+.
+Database: MySQL 5.7 or higher.
+Dependencies:
+spring-boot-starter-web (Web framework)
+mybatis-spring-boot-starter (MyBatis support)
+mysql-connector-java (MySQL driver)
+lombok (POJO simplification)
+IDE (Optional): IntelliJ IDEA or Eclipse.
+安装 / Installation
+中文
+安装 Java 和 Maven:
+确保 JDK 11+ 和 Maven 已安装（Java 下载，Maven 下载)。
+克隆项目:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+git clone https://github.com/your-username/manger-book-backend.git
+cd manger-book-backend
+配置数据库:
+在 MySQL 中创建数据库：
+sql
+
+Collapse
+
+Wrap
+
+Copy
+CREATE DATABASE book_management;
+更新 src/main/resources/application.properties：
+text
+
+Collapse
+
+Wrap
+
+Copy
+spring.datasource.url=jdbc:mysql://localhost:3306/book_management
+spring.datasource.username=your-username
+spring.datasource.password=your-password
+spring.jpa.hibernate.ddl-auto=update
+mybatis.mapper-locations=classpath:mapper/*.xml
+安装依赖:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+mvn clean install
+运行程序:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+mvn spring-boot:run
+默认运行在 http://localhost:8080。
+English
+Install Java and Maven:
+Ensure JDK 11+ and Maven are installed (Java download, Maven download).
+Clone the Project:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+git clone https://github.com/your-username/manger-book-backend.git
+cd manger-book-backend
+Configure Database:
+Create a MySQL database:
+sql
+
+Collapse
+
+Wrap
+
+Copy
+CREATE DATABASE book_management;
+Update src/main/resources/application.properties:
+text
+
+Collapse
+
+Wrap
+
+Copy
+spring.datasource.url=jdbc:mysql://localhost:3306/book_management
+spring.datasource.username=your-username
+spring.datasource.password=your-password
+spring.jpa.hibernate.ddl-auto=update
+mybatis.mapper-locations=classpath:mapper/*.xml
+Install Dependencies:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+mvn clean install
+Run the Application:
+bash
+
+Collapse
+
+Wrap
+
+Copy
+mvn spring-boot:run
+Runs by default at http://localhost:8080.
+使用指南 / Usage Guide
+中文
+启动服务: 运行 mvn spring-boot:run，访问 http://localhost:8080。
+用户登录:
+POST /login 使用用户名和密码登录，返回角色信息。
+图书管理:
+POST /api/books 创建图书。
+GET /api/books 获取所有图书。
+GET /api/books/{id} 获取特定图书。
+PUT /api/books/{id} 更新图书。
+DELETE /api/books/{id} 删除图书。
+借阅管理:
+POST /api/books/borrow/{bookId} 借阅图书。
+POST /api/borrow 创建借阅记录。
+GET /api/borrow 获取所有借阅记录。
+用户管理:
+POST /api/register 注册新用户。
+GET /api/users 获取所有用户。
+English
+Start the Service: Run mvn spring-boot:run and visit http://localhost:8080.
+User Login:
+POST /login to log in with username and password, returns role info.
+Book Management:
+POST /api/books to create a book.
+GET /api/books to get all books.
+GET /api/books/{id} to get a specific book.
+PUT /api/books/{id} to update a book.
+DELETE /api/books/{id} to delete a book.
+Borrow Management:
+POST /api/books/borrow/{bookId} to borrow a book.
+POST /api/borrow to create a borrow record.
+GET /api/borrow to get all borrow records.
+User Management:
+POST /api/register to register a new user.
+GET /api/users to get all users.
+数据库结构 / Database Schema
+以下是主要表结构（基于 MySQL）：
+
+users 表
+id (INT, 主键, 自增)
+username (VARCHAR(50), 唯一)
+password (VARCHAR(100))
+role (VARCHAR(20), 默认 'user')
+created_at (DATETIME)
+books 表
+id (INT, 主键, 自增)
+title (VARCHAR(100))
+author (VARCHAR(100))
+genre (VARCHAR(50))
+published_date (DATE)
+isbn (VARCHAR(13), 唯一)
+quantity (INT)
+borrow_records 表
+id (INT, 主键, 自增)
+user_id (INT, 外键 -> users.id)
+book_id (INT, 外键 -> books.id)
+borrow_date (DATE)
+return_date (DATE, 可为空)
+status (VARCHAR(20), 默认 'borrowed')
+request_status (VARCHAR(20), 默认 'pending')
+created_at (DATE)
+注意事项 / Notes
+中文
+数据库配置: 确保 application.properties 中的数据库连接信息正确。
+安全性: 当前未实现 JWT 或密码加密，生产环境需添加。
+日志: 异常处理中使用了 printStackTrace，建议替换为日志框架（如 Logback）。
+English
+Database Config: Ensure database connection details in application.properties are correct.
+Security: No JWT or password encryption implemented yet; add for production.
+Logging: Exceptions use printStackTrace; replace with a logging framework (e.g., Logback) in production.
